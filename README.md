@@ -67,18 +67,6 @@ The project is designed to be modular: you can use the pre‑trained gesture mod
 ---
 
 ## System Architecture
-┌──────────┐     ┌────────────┐     ┌────────────┐     ┌──────────┐
-│  Webcam  │────▶│  MediaPipe │────▶│  Gesture   │────▶│  pynput  │
-│ (Camera) │     │   Hands    │     │ Classifier │     │ (Mouse)  │
-└──────────┘     └────────────┘     └────────────┘     └──────────┘
-│                   ▲
-│    Key‑point      │
-▼    extraction     │
-┌────────────┐            │
-│  numpy/    │───────►────┘
-│  pandas    │
-└────────────┘
-
 
 1. **Capture**: Frames are grabbed from the webcam using OpenCV.
 2. **Landmarks**: MediaPipe Hands detects 21 3D hand landmarks.

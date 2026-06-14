@@ -44,16 +44,13 @@ The project is designed to be modular: you can use the pre‑trained gesture mod
 
 ## Features
 
-- **Mouse movement** – move the cursor by moving your hand  
-- **Left click, right click, double click, drag & drop**  
-- **Scroll up / scroll down**  
-- **Volume / brightness control** (optional)  
-- **Multi‑hand support**  
-- **Calm, silent, non‑contact control**  
-- **Custom gesture training pipeline** (Keras / PyTorch)  
-- **Live visualization** of landmarks and recognised gesture  
-- **Configurable sensitivity & gesture cooldown**  
-- **Cross‑platform** (Windows, macOS, Linux)
+- Real-time hand tracking with MediaPipe Tasks API
+- Smooth, jitter-free cursor movement
+- Left click via thumb-index pinch
+- Right click via thumb-middle pinch
+- Scroll up/down by raising two fingers and moving the hand
+- No calibration required – works out of the box
+- Modular design for easy testing and extension
 
 ---
 

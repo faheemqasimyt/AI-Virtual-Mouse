@@ -57,15 +57,6 @@ The project is designed to be modular: you can use the pre‑trained gesture mod
 
 ---
 
-## Demo
-
-> _Add your own GIF / screenshot / video link here_
-
-*Example:*  
-![virtual-mouse-demo](https://user-images.githubusercontent.com/your_demo.gif)
-
----
-
 ## System Architecture
 
 1. **Capture**: Frames are grabbed from the webcam using OpenCV.

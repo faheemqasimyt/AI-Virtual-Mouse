@@ -67,3 +67,50 @@ The project is designed to be modular: you can use the pre‑trained gesture mod
 ---
 
 ## System Architecture
+┌──────────┐     ┌────────────┐     ┌────────────┐     ┌──────────┐
+│  Webcam  │────▶│  MediaPipe │────▶│  Gesture   │────▶│  pynput  │
+│ (Camera) │     │   Hands    │     │ Classifier │     │ (Mouse)  │
+└──────────┘     └────────────┘     └────────────┘     └──────────┘
+│                   ▲
+│    Key‑point      │
+▼    extraction     │
+┌────────────┐            │
+│  numpy/    │───────►────┘
+│  pandas    │
+└────────────┘
+
+
+1. **Capture**: Frames are grabbed from the webcam using OpenCV.
+2. **Landmarks**: MediaPipe Hands detects 21 3D hand landmarks.
+3. **Feature Engineering**: Relative angles/distances are computed (NumPy).
+4. **Classification**: A deep neural network (Keras or PyTorch) predicts the current gesture.
+5. **Execution**: `pynput` translates the gesture into a mouse event (move, click, etc.).
+6. **Monitoring**: Optional logging and analytics with Pandas / Matplotlib.
+
+---
+
+## 🛠️ Tech Stack & Libraries
+
+| Library           | Purpose                                                       |
+|-------------------|---------------------------------------------------------------|
+| `opencv-python`   | Video capture, image processing, window rendering             |
+| `mediapipe`       | Real‑time hand landmark detection                             |
+| `pynput`          | Cross‑platform mouse and keyboard control                     |
+| `numpy`           | Numerical operations, feature extraction                      |
+| `pandas`          | Data handling, gesture logging, CSV export                    |
+| `matplotlib`      | Visualising landmark data, gesture statistics                 |
+| `python-dotenv`   | Environment variable management for API keys/config           |
+| `tensorflow/keras`| Building, training, and loading gesture classification model  |
+| `torch` (PyTorch) | Alternative deep learning framework for gesture models        |
+
+> **Why both Keras and PyTorch?**  
+> The project supports interchangeable back‑ends. A pre‑trained Keras model is provided for quick start, while a PyTorch implementation is available for researchers who prefer that ecosystem.
+
+---
+
+##  Installation & Setup
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/faheemqasimyt/Ai-Virtual-Mouse.git
+cd Ai-Virtual-Mouse
